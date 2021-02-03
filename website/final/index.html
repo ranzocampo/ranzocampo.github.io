@@ -1,0 +1,57 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript" src="../lib/p5.min.js"></script>
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script language="javascript" src="../lib/p5.sound.js"></script>
+	<script language="javascript" src="../lib/p5.play.js"></script>
+  <script language="javascript" src="../lib/p5.speech.js"></script>
+  <script language="javascript" src="../lib/p5.clickable.js"></script>
+  <script language="javascript" src="../lib/scenemanager.js"></script>
+  <script language="javascript" type="text/javascript" src="scenes.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+  <style>
+   body {padding: 50; margin: 50;
+  	background-color: #fcf7f3;
+  }
+   h1 { color:#ee9;
+	    font-size: 20;
+   }
+
+   p { color:#fa0;}
+
+  </style>
+
+</head>
+
+<body>
+  <h1> Final Project </h1>
+
+  <p> <strong>Virtual Coughing Pet</strong></p>
+
+  <p>Enter the two word phrase.</p>
+<form action="javascript:alert( 'success!' );">
+  <div>
+    <input type="text">
+    <input type="submit">
+  </div>
+</form>
+<span></span>
+
+<script>
+$( "form" ).submit(function( event ) {
+  if ( $( "input" ).first().val() === "stay home" ) {
+    $( "span" ).text( mgr.showScene( gamesuccess ) ).show();
+    return;
+  }
+
+  $( "span" ).text( mgr.showScene( gameoverscene ) ).show().fadeOut( 1000 );
+  event.preventDefault();
+});
+</script>
+
+ <br>
+</body>
+</html>
